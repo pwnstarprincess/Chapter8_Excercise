@@ -1,4 +1,9 @@
-﻿Public Class CreateNewFileForm
+﻿'JEnnifer Pezzulo
+'Chapter 8 Excercise
+'April 11, 2020
+
+
+Public Class CreateNewFileForm
 
     Dim Senate As New USSenate()
     Private Sub CreateNewFile()
