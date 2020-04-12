@@ -1,4 +1,4 @@
-﻿'JEnnifer Pezzulo
+﻿'Jennifer Pezzulo
 'Chapter 8 Excercise
 'April 11, 2020
 
