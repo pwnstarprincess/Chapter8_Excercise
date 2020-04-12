@@ -16,7 +16,7 @@ Public Class USSenate
     Public Function Compute114Senate() As String()
 
         'Return an array of the 113 senate minus the retired senators but including the newly elected senators
-        Return GetInputData("Senate113.txt").Except(GetInputData("RetiredSen.txt")).ToArray().Union(GetInputData("NewSen.txt")).ToArray()
+        Return GetInputData("./data/Senate113.txt").Except(GetInputData("./data/RetiredSen.txt")).ToArray().Union(GetInputData("./data/NewSen.txt")).ToArray()
 
     End Function
 

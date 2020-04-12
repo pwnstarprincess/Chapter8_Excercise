@@ -19,7 +19,15 @@ Public Class CreateNewFileForm
         'Disable because there is no need to rebuild file
         SenateMainForm.GenNewSenateButton.Enabled = False
         'Close this form
-        Me.Close()
+        Close()
+
+        'Show message box comfirming data written
+        Dim msg = MessageBox.Show("Senate114 file created", "Data Written",
+        MessageBoxButtons.OK,
+        MessageBoxIcon.Asterisk,
+        MessageBoxDefaultButton.Button1,
+        MessageBoxOptions.RightAlign
+     )
 
     End Sub
 
