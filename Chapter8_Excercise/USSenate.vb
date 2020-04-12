@@ -21,6 +21,7 @@ Public Class USSenate
     End Function
 
     'Function to determine if two candidates share the same party for a given state.  Returns true or false
+    'Takes state and input data as parameters
     Public Function HasSameParty(ByVal state As String, data As String) As Boolean
 
         'Query to select party affiliation and state from data for a given state
@@ -36,13 +37,14 @@ Public Class USSenate
                 Return True
             End If
         End If
-        'If not matching (or not two) return false
+        'If not matching (or not two senators) return false
         Return False
 
 
     End Function
 
     'Function to get the number of members of a given party
+    'Takes the party and input data as parameters
     Public Function GetPartyAffiliations(party As String, data As String) As Integer
         'Query senate for members of a party based on the supplied party parameter
         Dim query = From Senate In GetInputData(data)
@@ -55,6 +57,7 @@ Public Class USSenate
     End Function
 
     'Function to Return the number of states with both senators from the same party
+    'Takes the senate membership input data as a parameter
     Public Function GetSamePartyAffiliationStates(data As String) As Integer
 
         'Query for states with two senators from same party
@@ -70,6 +73,7 @@ Public Class USSenate
     End Function
 
     'Function to get the list of US states
+    'Takes the senate membership data as parameter
     Public Function GetListofStates(data As String) As IEnumerable(Of String)
         'Query all states in the Senate input data
         Dim states = From senate In GetInputData(data)
@@ -82,8 +86,8 @@ Public Class USSenate
         Return states
     End Function
 
-    'Function to get the senators for a given state based on the selected state and Senate data passed in 
-    'As parameters
+    'Function to get the senators for a given state based on the selected state and Senate membership data 
+    'passed in as parameters
     Public Function GetSenatorsForState(data As String, selectedState As String) As IEnumerable(Of String)
         Dim senators = From senate In GetInputData(data)
                        Let name = senate.Split(","c)(0)
@@ -94,7 +98,5 @@ Public Class USSenate
         'Return the senators as IEnumerable
         Return senators
     End Function
-
-
 
 End Class
